@@ -1,0 +1,65 @@
+﻿@model WienerOsiguranjeTehnickiZadatak.Models.Partner
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="mx-auto text-center">
+<h4>Kreiraj novog partnera</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TipPartneraId" class="control-label"></label>
+                <select asp-for="TipPartneraId" class ="form-control" asp-items="ViewBag.TipPartneraId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DomicilnostId" class="control-label"></label>
+                <select asp-for="DomicilnostId" class ="form-control" asp-items="ViewBag.DomicilnostId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="OIB" class="control-label"></label>
+                <input asp-for="OIB" class="form-control" />
+                <span asp-validation-for="OIB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ime" class="control-label"></label>
+                <input asp-for="Ime" class="form-control" />
+                <span asp-validation-for="Ime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prezime" class="control-label"></label>
+                <input asp-for="Prezime" class="form-control" />
+                <span asp-validation-for="Prezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Naziv" class="control-label"></label>
+                <input asp-for="Naziv" class="form-control" />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Spol" class="control-label"></label>
+                <input asp-for="Spol" class="form-control" />
+                <span asp-validation-for="Spol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adresa" class="control-label"></label>
+                <input asp-for="Adresa" class="form-control" />
+                <span asp-validation-for="Adresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EksterniBrojPartnera" class="control-label"></label>
+                <input asp-for="EksterniBrojPartnera" class="form-control" />
+                <span asp-validation-for="EksterniBrojPartnera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kreiraj partnera" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
